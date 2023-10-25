@@ -1,0 +1,13 @@
+.main-container {
+    display: grid; 
+    grid-template-columns: repeat(3, auto);
+    grid-template-rows: repeat(3, auto);
+    justify-content: center;
+}
+
+.square {
+    width:200px;
+    height:200px;
+    background-color: grey;
+    text-align:center;
+}
