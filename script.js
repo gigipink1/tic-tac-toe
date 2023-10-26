@@ -34,15 +34,18 @@ const gameBoard = (function buildGame() {
 
 
 const game = (function (){
-    function getPlayers() {
-        const playerinfo = document.querySelector('#players');
-        playerinfo.showModal();
-        
-
+    function showInput() {
+        const playerInfo = document.querySelector('#players');
+        playerInfo.showModal();
+        const submitBtn = document.querySelector('.start-game');
+        submitBtn.addEventListener('click', extractNames);
     }
 
-    const player1 = player('Mark', 'O');
-    const player2 = player('Steve', 'X');
+    
+    const players = [];
+    const player1 = player(players[0], 'X');
+    const player2 = player(players[1], '0');
+    console.log(players);
     let currentGame = gameBoard.gameSquares();
     let currentPlayer = player1;
 
@@ -69,8 +72,20 @@ const game = (function (){
         box.addEventListener('click', changeMarker)
         });
     }
-    return {changeMarker, gameButtons, getPlayers};
+
+    function extractNames(){
+        const playerInput = document.querySelector('#playerInfo');
+        const playerNames = playerInput;
+        
+            console.log(playerNames);
+            const playerX = playerNames[0].value;
+            const playerO = playerNames[1].value;
+            players.push(playerX, playerO);
+    }
+
+    return {changeMarker, gameButtons, showInput, players};
 })();
 
-game.getPlayers();
+game.showInput();
 game.gameButtons();
+
