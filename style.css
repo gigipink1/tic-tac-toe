@@ -1,14 +1,67 @@
+:root {
+    --font-color: rgb(18, 26, 139);
+    --main-color: rgb(197, 210, 214);
+    --accent-color: rgb(221, 226, 224);
+}
+
+body {
+    background-color:var(--accent-color);
+    font-family: 'Playpen Sans', cursive;
+    color: var(--font-color);
+    text-align: center;
+}
+
 .main-container {
     display: grid; 
     grid-template-columns: repeat(3, auto);
     grid-template-rows: repeat(3, auto);
     justify-content: center;
+    
+}
+
+#players {
+    background-color: var(--accent-color);
+    color: var(--font-color);
+    border-radius: 10px;
+    
+}
+
+button {
+    font-family: inherit;
+    color: inherit;
+    font-weight: 800;
+    border-radius: 5px;
+    padding: 10px 20px;
+    border: 2px solid var(--font-color);
+}
+
+button:hover {
+    background-color:rgb(54, 69, 153);
+    color: white;
+}
+
+input {
+    background-color: #ebebeb;
+    border: 2px solid var(--font-color);
+    border-radius: 5px;
+    font-family: inherit
 }
 
 .square {
     width:200px;
     height:200px;
-    background-color: grey;
+    background-color: var(--main-color);
     text-align:center;
-    border: 2px solid black;
+    border: 2px solid rgb(54, 69, 153);
+    font-size: 150px;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    color: rgb(53, 62, 182);
+    font-family: 'Playpen Sans', cursive;
+    font-weight: 200;
+}
+
+.square:hover {
+    background-color: rgb(215, 229, 233)
 }

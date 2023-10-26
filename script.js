@@ -22,7 +22,7 @@ const gameBoard = (function buildGame() {
 
     function gameSquares() {
         const gameBoard = (() => {
-            let board = [{marker: null}, {marker: null}, {marker: null}, {marker: null}, {marker: null}, {marker: null}, {marker: null}, {marker: null}, {marker: null}];
+            let board = [ null, null, null,null, null,  null,  null, null,  null];
         return board;
         })
         return gameBoard(); 
@@ -34,6 +34,13 @@ const gameBoard = (function buildGame() {
 
 
 const game = (function (){
+    function getPlayers() {
+        const playerinfo = document.querySelector('#players');
+        playerinfo.showModal();
+        
+
+    }
+
     const player1 = player('Mark', 'O');
     const player2 = player('Steve', 'X');
     let currentGame = gameBoard.gameSquares();
@@ -62,8 +69,8 @@ const game = (function (){
         box.addEventListener('click', changeMarker)
         });
     }
-    return {changeMarker, gameButtons};
+    return {changeMarker, gameButtons, getPlayers};
 })();
 
-
+game.getPlayers();
 game.gameButtons();
