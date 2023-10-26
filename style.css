@@ -19,7 +19,7 @@ body {
     
 }
 
-#players {
+#players, #end-screen {
     background-color: var(--accent-color);
     color: var(--font-color);
     border-radius: 10px;
